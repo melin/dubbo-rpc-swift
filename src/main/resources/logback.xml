@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+	<jmxConfigurator />
+	
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d %p [%c] - &lt;%m&gt;%n</pattern>
+        </encoder>
+    </appender>
+    
+    <logger name="com.alibaba.dubbo.config.AbstractConfig" level="WARN" additivity="false"/>   
+    <logger name="com.alibaba.dubbo.registry.multicast.MulticastRegistry" level="WARN" additivity="false"/>   
+    <logger name="com.starit.ueap.collect.plugins" level="debug" additivity="false"/> 
+    
+    <root>
+        <level value="INFO" />
+        <appender-ref ref="CONSOLE" />
+    </root>
+</configuration>
