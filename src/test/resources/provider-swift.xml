@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        ">
+ 
+    <!-- Application name -->
+    <dubbo:application name="hello-world-app"  />
+ 
+    <!-- registry address, used for service to register itself -->
+    <dubbo:registry protocol="zookeeper"  address="192.168.205.24:2181,192.168.205.25:2181,192.168.205.26:2181" />
+ 
+    <!-- expose this service through dubbo protocol, through port 20880 -->
+    <dubbo:protocol name="swift" port="20880" threads="10" />
+    
+    <!-- which service interface do we expose? -->
+    <dubbo:service interface="com.ustcinfo.swift.HelloService" ref="helloService" version="hello" />
+ 
+    <!-- designate implementation -->
+    <bean id="helloService" class="com.ustcinfo.swift.HelloServiceImpl" />
+ 
+</beans>

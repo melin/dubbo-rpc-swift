@@ -9,12 +9,14 @@ package com.ustcinfo.swift;
  * @author libinsong1204@gmail.com
  *  
  */
+import java.io.Serializable;
+
 import com.facebook.swift.codec.ThriftConstructor;
 import com.facebook.swift.codec.ThriftField;
 import com.facebook.swift.codec.ThriftStruct;
 
 @ThriftStruct
-public class LogEntry {
+public class LogEntry implements Serializable {
 	private final String category;
 	private final String message;
 

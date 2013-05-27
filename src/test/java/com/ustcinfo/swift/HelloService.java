@@ -4,8 +4,6 @@
  */
 package com.ustcinfo.swift;
 
-import java.util.List;
-
 import org.apache.thrift.TException;
 
 import com.facebook.swift.service.ThriftMethod;
@@ -19,5 +17,5 @@ import com.facebook.swift.service.ThriftService;
 @ThriftService("scribe")
 public interface HelloService {
 	@ThriftMethod("Log")
-	ResultCode log(List<LogEntry> messages) throws TException;
+	ResultCode log(LogEntry log) throws TException;
 }

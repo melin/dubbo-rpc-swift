@@ -15,12 +15,8 @@ import java.util.List;
 public class HelloServiceImpl implements HelloService {
 	private final List<LogEntry> messages = new ArrayList<LogEntry>();
 
-	public List<LogEntry> getMessages() {
-		return messages;
-	}
-
 	@Override
-	public ResultCode log(List<LogEntry> messages) {
+	public ResultCode log(LogEntry log) {
 		this.messages.addAll(messages);
 		return ResultCode.OK;
 	}
